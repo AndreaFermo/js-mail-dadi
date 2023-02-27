@@ -1,18 +1,31 @@
-const customerEmail = ['andre@gmail.com', 'simone@gmail.com', 'paolo@gmail.com', 'daniele@gmail.com'];
+const customerEmail = ['andrea@gmail.com', 'simone@gmail.com', 'paolo@gmail.com', 'daniele@gmail.com'];
 
-const inputEmail = prompt('inserisci la tua email');
+const domButton = document.getElementById('accessButton');
 
-let verify = false;
+let access = document.getElementById('accessState');
 
-for (let i = 0; i < customerEmail.length; i++) {
+
+domButton.addEventListener('click', 
+    function () {
+        let inputEmail = document.getElementById('email').value;
+
+        let verify = false;
+
+        for (let i = 0; i < customerEmail.length; i++) {
     
-    if (inputEmail == customerEmail [i]) {
-        verify = true;
-    } 
-}
+            if (inputEmail == customerEmail [i]) {
+                verify = true;
+            }; 
+        };
 
-if (verify == true) {
-    console.log('benvento');
-} else {
-    console.log('registrati');
-}
+        if (verify == true) {
+            access.innerHTML = 'Benvento!'
+            console.log('benvento');
+        } else {
+            access.innerHTML = 'Email non registrata!'
+            console.log('registrati');
+        };
+    }
+);
+
+
