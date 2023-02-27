@@ -2,13 +2,17 @@ const customerEmail = ['andre@gmail.com', 'simone@gmail.com', 'paolo@gmail.com',
 
 const inputEmail = prompt('inserisci la tua email');
 
-let notVerified = 'email non registrata';
-console.log(notVerified)
+let verify = false;
 
 for (let i = 0; i < customerEmail.length; i++) {
     
     if (inputEmail == customerEmail [i]) {
-        notVerified = 'accesso effettuato'
-        console.log('accesso effettuato')
+        verify = true;
     } 
+}
+
+if (verify == true) {
+    console.log('benvento');
+} else {
+    console.log('registrati');
 }
